@@ -1,8 +1,20 @@
-![Checks](https://github.com/muckt/caps/actions/workflows/checks.yml/badge.svg)
+![Checks](https://github.com/muckt/caps/actions/workflows/checks.yaml/badge.svg)
 
 # caps
 Code Fellows 401 JavaScript CAPS system
 
+## Getting Started
+
+```Bash
+# Install Dependencies
+npm install
+
+# Running App
+npm run dev
+
+# Testing with jest
+npm test
+```
 
 ### Sources
 
