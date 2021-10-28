@@ -3,14 +3,9 @@
 // Imports
 const events = require('./utils/event-pool')
 const faker = require('faker')
+const { logEvent } = require('./utils/logger')
 require('./modules/driver')
 require('./modules/vendor')
-
-// Logger
-const logEvent = (event, payload ) => {
-  let time = new Date()
-  console.log('EVENT', { event, time, payload})
-}
 
 if(process.env.NODE_ENV === 'development') { 
   setInterval(() => {
