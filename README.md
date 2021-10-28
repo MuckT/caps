@@ -1,7 +1,7 @@
 ![Checks](https://github.com/muckt/caps/actions/workflows/checks.yaml/badge.svg)
 
-# caps
-Code Fellows 401 JavaScript CAPS system
+# Code Academy Parcel Service - (CAPS)
+Code Fellows 401 JavaScript CAPS System
 
 ## Getting Started
 
@@ -9,7 +9,7 @@ Code Fellows 401 JavaScript CAPS system
 # Install Dependencies
 npm install
 
-# Running App
+# Running CAPS
 npm run dev
 
 # Testing with jest
