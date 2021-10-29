@@ -7,14 +7,18 @@ let consoleSpy
 let samplePayload
 
 beforeAll(() => {
-  consoleSpy = jest.spyOn(console, 'log')
+  consoleSpy = jest.spyOn(console, 'log').mockImplementation()
   samplePayload = {
     store: faker.company.companyName(),
     orderID: faker.datatype.uuid(),
     customer: faker.name.findName(),
     address: faker.address.streetAddress()
   }
-})  
+})
+
+afterEach(() => {
+  consoleSpy.mockRestore()
+})
 
 describe('Given Vendor', () => {
   describe('When delivered event is emitted', () => {
