@@ -26,8 +26,12 @@ jobs:
         with:
           node-version: '14'
           check-latest: true
-      - run: npm install
-      - run: npm run lint
+      - name: Install dependencies
+        run: npm install
+      - name: Bootstrap with lerna
+        run: npm run bootstrap
+      - name: lint with eslint
+        run: npm run lint
   test:
     name: Test
     # The type of runner that the job will run on
@@ -42,8 +46,10 @@ jobs:
         with:
           node-version: '14'
           check-latest: true
-      - name: Install dependencies with Lerna
-        run: npm run bootstrap
+      - name: Install dependencies
+        run: npm install
+      - name: Bootstrap with lerna
+        run: npm run bootstrap 
       - name: Run Jest Tests
         run: npm run test
       - name: 'Upload to Codecov'
