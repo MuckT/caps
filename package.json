@@ -4,6 +4,7 @@
   "description": "Code Fellows 401 JavaScript CAPS system",
   "scripts": {
     "install": "lerna exec -- npm install",
+    "bootstrap": "lerna bootstrap --hoist",
     "dev": "lerna exec npm run dev -- --if-present",
     "test": "NODE_ENV=test jest --coverage --silent",
     "lint": "eslint src"

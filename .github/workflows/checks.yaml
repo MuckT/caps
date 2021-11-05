@@ -46,6 +46,8 @@ jobs:
           check-latest: true
       - name: Install dependencies
         run: npm run install
+      - name: Lerna bootstrap
+        run: npm run bootstrap
       - name: Run Jest Tests
         run: npm run test
       - name: 'Upload to Codecov'
