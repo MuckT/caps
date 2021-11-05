@@ -1,0 +1,28 @@
+{
+  "name": "socketio-server-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hub.js",
+  "scripts": {
+    "start": "NODE_ENV=production node hub.js",
+    "dev": "NODE_ENV=development node hub.js",
+    "test": "NODE_ENV=test jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuckT/caps.git"
+  },
+  "author": "MuckT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MuckT/caps/issues"
+  },
+  "homepage": "https://github.com/MuckT/caps#readme",
+  "dependencies": {
+    "socket.io": "^4.3.1"
+  },
+  "devDependencies": {
+    "faker": "^5.5.3",
+    "jest": "^27.3.1"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "app-driver",
+  "version": "1.0.0",
+  "description": "The driver app for the CAPS service",
+  "main": "driver.js",
+  "scripts": {
+    "start": "NODE_ENV=production node driver.js",
+    "dev": "NODE_ENV=development node driver.js",
+    "test": "NODE_ENV=test jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuckT/caps.git"
+  },
+  "author": "MuckT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MuckT/caps/issues"
+  },
+  "homepage": "https://github.com/MuckT/caps#readme",
+  "dependencies": {
+    "socket.io-client": "^4.3.2"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1",
+    "faker": "^5.5.3"
+  }
+}
