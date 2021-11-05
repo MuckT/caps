@@ -50,6 +50,10 @@ jobs:
         run: npm run bootstrap
       - name: Run Jest Tests
         run: npm run test
+      - name: Print working dir
+        run: |
+          pwd
+          ls
       - name: 'Upload to Codecov'
         uses: codecov/codecov-action@v2
         with:
