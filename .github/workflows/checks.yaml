@@ -45,9 +45,7 @@ jobs:
           node-version: '14'
           check-latest: true
       - name: Install dependencies
-        run: npm install
-      - name: Bootstrap with lerna
-        run: npm run bootstrap 
+        run: npm run install
       - name: Run Jest Tests
         run: npm run test
       - name: 'Upload to Codecov'

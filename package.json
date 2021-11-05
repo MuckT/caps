@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Code Fellows 401 JavaScript CAPS system",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "install": "lerna exec -- npm install",
     "dev": "lerna exec npm run dev -- --if-present",
     "test": "NODE_ENV=test jest --coverage --silent",
     "lint": "eslint src"
@@ -21,8 +21,5 @@
     "jest": "^27.3.1",
     "lerna": "^4.0.0"
   },
-  "private": false,
-  "workspaces": [
-    "src/*"
-  ]
+  "private": false
 }
