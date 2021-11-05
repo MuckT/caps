@@ -1,6 +1,6 @@
 'use strict'
 
-// connecting to socket io as a client
+// Connecting to socket io as a client
 const io = require('socket.io-client')
 
 // connect to the caps

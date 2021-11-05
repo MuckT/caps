@@ -3,8 +3,8 @@
 const faker = require('faker')
 const { handlePickup, handleInTransit, handleDelivered } = require('./driver')
 
-let consoleSpy
-let samplePayload
+let consoleSpy, samplePayload
+
 
 beforeEach(() => {
   consoleSpy = jest.spyOn(console, 'log').mockImplementation()

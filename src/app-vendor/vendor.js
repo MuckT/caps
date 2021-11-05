@@ -1,12 +1,12 @@
 'use strict'
 
-// connecting to socket io as a client
+// Connecting to socket io as a client
 const io = require('socket.io-client')
 
 // connect to the caps
 const socket = io.connect('http://localhost:3000/caps')
 
-// Vender functions
+// Vendor functions
 const handleDelivered = (eventObj) => {
   console.log(`Thank you, ${eventObj.customer}`)
 }
