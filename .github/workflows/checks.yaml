@@ -53,4 +53,5 @@ jobs:
       - name: 'Upload to Codecov'
         uses: codecov/codecov-action@v2
         with:
+          directory: './src/*/coverage'
           token: ${{ secrets.CODECOV_TOKEN }}
