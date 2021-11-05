@@ -28,8 +28,6 @@ jobs:
           check-latest: true
       - name: Install dependencies
         run: npm install
-      - name: Bootstrap with lerna
-        run: npm run bootstrap
       - name: lint with eslint
         run: npm run lint
   test:
