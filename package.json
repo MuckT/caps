@@ -6,7 +6,8 @@
     "install": "lerna exec -- npm install",
     "bootstrap": "lerna bootstrap --hoist",
     "dev": "lerna exec npm run dev -- --if-present",
-    "test": "NODE_ENV=test jest --coverage --silent",
+    "test": "lerna exec npm run test",
+    "test:ci": "lerna exec npm run test:ci",
     "lint": "eslint src"
   },
   "repository": "git+https://github.com/MuckT/caps.git",
