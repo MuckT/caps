@@ -5,7 +5,7 @@ const { logEvent } = require('./utils/logger')
 
 // on connection -> console log that connection
 io.on('connection', (socket) => {
-    console.log('CORE', socket)
+  console.log('CORE', socket)
 })
 
 // Create the namespace 'caps'
