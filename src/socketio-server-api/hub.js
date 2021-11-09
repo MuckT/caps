@@ -1,7 +1,11 @@
 'use strict'
 
 const io = require('socket.io')(3000)
+const { v4: uuidv4 } = require('uuid')
 const { logEvent } = require('./utils/logger')
+
+// Simple queue
+const queue = {}
 
 // on connection -> console log that connection
 io.on('connection', (socket) => {
@@ -20,10 +24,27 @@ caps.on('connection', (socket) => {
     socket.join(room)
   })
 
+  // Get all
+  socket.on('get-all', (storeId) => {
+    Object.keys(queue[storeId]).forEach(id => {
+      socket.emit('to-deliver', { id, payload: queue[storeId][id] });
+    })
+  })
+
+  // On to deliver read
+  socket.on('received', eventObj => {
+    console.log(`driver assigned ${eventObj} `)
+
+    delete queue[eventObj.payload.storeId][eventObj.id]
+    console.log('Queue Status: ', queue)
+  })
+
   // pickup event
   socket.on('pickup', payload => {
+    let id = v4()
+    queue[payload.storeId][id] = payload
     logEvent('pickup', payload)
-    caps.emit('pickup', payload)
+    caps.emit('pickup', { id, payload })
   })
 
   // in-transit event
