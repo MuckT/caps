@@ -24,8 +24,8 @@ describe("Given '/'", () => {
 describe("Given '/pickup'", () => {
   beforeEach(() => {
     requestBody = {
-      store: faker.company.companyName(),
-      orderID: faker.datatype.uuid(),
+      storeId: faker.datatype.uuid(),
+      orderId: faker.datatype.uuid(),
       customer: faker.name.findName(),
       address: faker.address.streetAddress()
     }
@@ -47,8 +47,8 @@ describe("Given '/pickup'", () => {
 describe("Given '/in-transit'", () => {
   beforeEach(() => {
     requestBody = {
-      store: faker.company.companyName(),
-      orderID: faker.datatype.uuid(),
+      storeId: faker.datatype.uuid(),
+      orderId: faker.datatype.uuid(),
       customer: faker.name.findName(),
       address: faker.address.streetAddress()
     }
@@ -70,8 +70,8 @@ describe("Given '/in-transit'", () => {
 describe("Given '/delivered'", () => {
   beforeEach(() => {
     requestBody = {
-      store: faker.company.companyName(),
-      orderID: faker.datatype.uuid(),
+      storeId: faker.datatype.uuid(),
+      orderId: faker.datatype.uuid(),
       customer: faker.name.findName(),
       address: faker.address.streetAddress()
     }

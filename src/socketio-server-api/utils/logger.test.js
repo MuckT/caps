@@ -8,8 +8,8 @@ let consoleSpy, samplePayload
 beforeAll(() => {
   consoleSpy = jest.spyOn(console, 'log').mockImplementation()
   samplePayload = {
-    store: faker.company.companyName(),
-    orderID: faker.datatype.uuid(),
+    storeId: faker.datatype.uuid(),
+    orderId: faker.datatype.uuid(),
     customer: faker.name.findName(),
     address: faker.address.streetAddress()
   }
