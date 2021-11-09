@@ -26,8 +26,10 @@ jobs:
         with:
           node-version: '14'
           check-latest: true
-      - run: npm install
-      - run: npm run lint
+      - name: Install dependencies
+        run: npm install
+      - name: lint with eslint
+        run: npm run lint
   test:
     name: Test
     # The type of runner that the job will run on
@@ -43,16 +45,11 @@ jobs:
           node-version: '14'
           check-latest: true
       - name: Install dependencies
-        run: npm install
-      - name: Create .env File
-        env:
-          SECRET: ${{ secrets.SECRET }}
-        run : |
-          echo SECRET=$SECRET >> .env
-      - name: Run Build
-        run: npm run build --if-present
+        run: npm run install
+      - name: Lerna bootstrap
+        run: npm run bootstrap
       - name: Run Jest Tests
-        run: npm run test
+        run: npm run test:ci
       - name: 'Upload to Codecov'
         uses: codecov/codecov-action@v2
         with:

@@ -1,10 +1,10 @@
 'use strict'
-const events = require('../utils/event-pool')
-const faker = require('faker')
-require('./driver')
 
-let consoleSpy
-let samplePayload
+const faker = require('faker')
+const { handlePickup, handleInTransit, handleDelivered } = require('./driver')
+
+let consoleSpy, samplePayload
+
 
 beforeEach(() => {
   consoleSpy = jest.spyOn(console, 'log').mockImplementation()
@@ -23,19 +23,19 @@ afterEach(() => {
 describe('Given Driver', () => {
   describe('When pickup event is emitted', () => {
     it('Then console log is correct', () => {
-      events.emit('pickup', samplePayload)
+      handlePickup(samplePayload)
       expect(consoleSpy).toHaveBeenCalledWith(`DRIVER: picked up ${samplePayload.orderID}`)
     })
   })
   describe('When in-transit event is emitted', () => {
     it('Then console log is correct', () => {
-      events.emit('in-transit', samplePayload)
+      handleInTransit(samplePayload)
       expect(consoleSpy).toHaveBeenCalledWith(`DRIVER: in transit ${samplePayload.orderID}`)
     })
   })
   describe('When delivered event is emitted', () => {
     it('Then console log is correct', () => {
-      events.emit('delivered', samplePayload)
+      handleDelivered(samplePayload)
       expect(consoleSpy).toHaveBeenCalledWith(`DRIVER: delivered ${samplePayload.orderID}`)
     })
   })

@@ -1,0 +1,33 @@
+{
+  "name": "caps-api",
+  "version": "1.0.0",
+  "description": "The CAPS API",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=production node server.js",
+    "dev": "NODE_ENV=development node server.js",
+    "test": "NODE_ENV=test jest --coverage --forceExit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuckT/caps.git"
+  },
+  "author": "MuckT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MuckT/caps/issues"
+  },
+  "homepage": "https://github.com/MuckT/caps#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "socket.io-client": "^4.3.2"
+  },
+  "devDependencies": {
+    "faker": "^5.5.3",
+    "jest": "^27.3.1",
+    "supertest": "^6.1.6"
+  },
+  "private": false
+}

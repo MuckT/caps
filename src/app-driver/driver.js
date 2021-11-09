@@ -1,7 +1,10 @@
 'use strict'
 
-// Access to our Event Queue
-const events = require('../utils/event-pool')
+// Connecting to socket io as a client
+const io = require('socket.io-client')
+
+// connect to the caps
+const socket = io.connect('http://localhost:3000/caps')
 
 // Driver functions
 const handlePickup = (eventObj) => {
@@ -17,9 +20,9 @@ const handleDelivered = (eventObj) => {
 }
 
 // Assign handlers to listeners
-events.on('pickup', handlePickup)
-events.on('in-transit', handleInTransit)
-events.on('delivered', handleDelivered)
+socket.on('pickup', handlePickup)
+socket.on('in-transit', handleInTransit)
+socket.on('delivered', handleDelivered)
 
 // Exports needed for testing
 module.exports = {

@@ -2,17 +2,15 @@
   "name": "caps",
   "version": "1.0.0",
   "description": "Code Fellows 401 JavaScript CAPS system",
-  "main": "hub.js",
   "scripts": {
-    "start": "NODE_ENV=production node caps.js",
-    "dev": "NODE_ENV=development node caps.js",
-    "test": "NODE_ENV=test jest --coverage --silent",
-    "lint": "eslint ."
+    "install": "lerna exec -- npm install",
+    "bootstrap": "lerna bootstrap --hoist",
+    "dev": "lerna exec npm run dev -- --if-present",
+    "test": "lerna exec npm run test",
+    "test:ci": "jest test --coverage --forceExit",
+    "lint": "eslint src"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MuckT/caps.git"
-  },
+  "repository": "git+https://github.com/MuckT/caps.git",
   "author": "MuckT",
   "license": "MIT",
   "bugs": {
@@ -23,6 +21,7 @@
     "eslint": "^8.1.0",
     "eslint-plugin-jest": "^25.2.2",
     "jest": "^27.3.1",
-    "faker": "^5.5.3"
-  }
+    "lerna": "^4.0.0"
+  },
+  "private": false
 }

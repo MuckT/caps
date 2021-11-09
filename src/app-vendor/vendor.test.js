@@ -1,6 +1,7 @@
 'use strict'
-const events = require('../utils/event-pool')
+
 const faker = require('faker')
+const { handleDelivered } = require('./vendor')
 require('./vendor')
 
 let consoleSpy
@@ -23,7 +24,7 @@ afterEach(() => {
 describe('Given Vendor', () => {
   describe('When delivered event is emitted', () => {
     it('Then console log is correct', () => {
-      events.emit('delivered', samplePayload)
+      handleDelivered(samplePayload)
       expect(consoleSpy).toHaveBeenCalledWith(`Thank you, ${samplePayload.customer}`)
     })
   })
