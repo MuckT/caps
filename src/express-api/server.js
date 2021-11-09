@@ -13,8 +13,6 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-app.use(express.json())
-
 // Proof of life
 app.get('/', (req, res) => {
   res.status(200).send('Hello World!')
@@ -32,6 +30,7 @@ app.post('/in-transit', (req,res) => {
   res.status(200).json(req.body)
 })
 
+// Delivered
 app.post('/delivered', (req,res) => {
   socket.emit('delivered', req.body)
   res.status(200).json(req.body)
@@ -40,5 +39,5 @@ app.post('/delivered', (req,res) => {
 // Start server
 module.exports = {
   app: app,
-  start: () => app.listen(PORT, console.log(`Server started on Port ${PORT}`))
+  start: app.listen(PORT, console.log(`Server started on Port ${PORT}`))
 }
