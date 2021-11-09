@@ -8,15 +8,15 @@ const socket = io.connect('http://localhost:3000/caps')
 
 // Driver functions
 const handlePickup = (eventObj) => {
-  console.log(`DRIVER: picked up ${eventObj.orderID}`)
+  console.log(`DRIVER: picked up ${eventObj.orderId}`)
 }
 
 const handleInTransit = (eventObj) => {
-  console.log(`DRIVER: in transit ${eventObj.orderID}`)
+  console.log(`DRIVER: in transit ${eventObj.orderId}`)
 }
 
 const handleDelivered = (eventObj) => {
-  console.log(`DRIVER: delivered ${eventObj.orderID}`)
+  console.log(`DRIVER: delivered ${eventObj.orderId}`)
 }
 
 // Assign handlers to listeners
