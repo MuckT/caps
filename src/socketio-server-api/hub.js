@@ -27,7 +27,7 @@ caps.on('connection', (socket) => {
   // Get all
   socket.on('get-all', (storeId) => {
     Object.keys(queue[storeId]).forEach(id => {
-      socket.emit('to-deliver', { id, payload: queue[storeId][id] });
+      socket.emit('to-deliver', { id, payload: queue[storeId][id] })
     })
   })
 
@@ -41,7 +41,7 @@ caps.on('connection', (socket) => {
 
   // pickup event
   socket.on('pickup', payload => {
-    let id = v4()
+    let id = uuidv4()
     queue[payload.storeId][id] = payload
     logEvent('pickup', payload)
     caps.emit('pickup', { id, payload })
